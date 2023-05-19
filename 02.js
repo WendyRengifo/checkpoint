@@ -39,7 +39,7 @@ function BuscandoError(expresion) {
     }
   }
 
-  return pila.length === 0;
+  return pila.length === 0;  
 }
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
