@@ -17,6 +17,29 @@ REQUISITOS
 
 function ordenarInstrumentos(instrumentos) {
   // Tu código aquí:
+    // Verificar si se recibe un arreglo
+  if (!Array.isArray(instrumentos)) {
+    return "Debe recibir un array de strings";
+  }
+
+  // Verificar si el arreglo está vacío
+  if (instrumentos.length === 0) {
+    return "El array no debe estar vacio";
+  }
+
+  // Algoritmo de ordenamiento
+  for (let i = 0; i < instrumentos.length - 1; i++) {
+    for (let j = 0; j < instrumentos.length - 1 - i; j++) {
+      if (instrumentos[j] > instrumentos[j + 1]) {
+        // Intercambiar elementos
+        const temp = instrumentos[j];
+        instrumentos[j] = instrumentos[j + 1];
+        instrumentos[j + 1] = temp;
+      }
+    }
+  }
+
+  return instrumentos;
 }
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️

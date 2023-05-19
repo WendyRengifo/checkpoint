@@ -22,7 +22,19 @@ REQUISITOS
 */
 
 LinkedList.prototype.pacientesConMasDeUnaEnfermedad = function (lista) {
-  // Tu código aquí:
+  const newList = new LinkedList(); // Crear una nueva LinkedList vacía
+
+  let currentNode = lista.head; // Obtener el nodo actual (paciente)
+
+  while (currentNode) {
+    if (currentNode.value.enfermedad.length > 1) {
+      newList.add(currentNode.value); // Agregar el paciente a la nueva lista
+    }
+
+    currentNode = currentNode.next; // Mover al siguiente nodo
+  }
+
+  return newList; // Devolver la nueva lista de pacientes con más de una enfermedad
 };
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️

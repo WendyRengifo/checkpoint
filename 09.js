@@ -32,6 +32,7 @@ REQUISITOS
 
 BinarySearchTree.prototype.buscandoAlDoctor = function (id) {
   // Tu código aquí:
+
 };
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
