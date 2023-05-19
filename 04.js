@@ -17,8 +17,16 @@ REQUISITOS
 🟢 Puedes utilizar un default parameter para ayudarte.
 */
 
-function contarPacientes(pacientes) {
+function contarPacientes(pacientes, contar = 1) {
   // Tu código aquí:
+  if (pacientes.length === 0) {
+    return "No hay pacientes en la planta";
+  } else if (pacientes.length === contar) {
+    return "La cantidad de pacientes en la planta son: " + (contar);
+  }
+  
+  ++contar
+  return contarPacientes(pacientes, contar++)
 }
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
