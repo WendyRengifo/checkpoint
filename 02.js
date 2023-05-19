@@ -20,6 +20,26 @@
 
 function BuscandoError(expresion) {
   // Tu código aquí
+  const stack = [];
+  const apertura = ['(', '[', '{'];
+  const cierre = [')', ']', '}'];
+
+  for (let i = 0; i < expresion.length; i++) {
+    const caracter = expresions.charAt(i);
+
+    if (apertura.includes(caracter)) {
+      stack.push(caracter);
+    } else if (cierre.includes(caracter)) {
+      const indiceApertura = cierre.indexOf(caracter);
+      const ultimoApertura = stack.pop();
+
+      if (ultimoApertura !== apertura[indiceApertura]) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
 }
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
