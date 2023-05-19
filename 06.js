@@ -22,6 +22,21 @@ REQUISITOS
 
 function numHabitaciones(pacientes, capacidad) {
   // Tu código aquí:
+  // Caso base: si no hay pacientes, no se necesitan habitaciones
+  if (pacientes === 0) {
+    return 0;
+  }
+
+  // Caso base: si hay menos pacientes que la capacidad, se necesita una habitación
+  if (pacientes <= capacidad) {
+    return 1;
+  }
+
+  // Llamada recursiva: calcular el número de habitaciones necesarias para el resto de los pacientes
+  const habitacionesRestantes = numHabitaciones(pacientes - capacidad, capacidad);
+
+  // Sumar 1 al número de habitaciones necesarias (por la habitación actual) y al número de habitaciones restantes
+  return 1 + habitacionesRestantes;
 }
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
