@@ -29,36 +29,33 @@ string: "No se puede agregar el mismo empleado".
 */
 
 BinarySearchTree.prototype.agregarEmpleado = function(empleado) {
-  var newNode = new Node(empleado);
-
   if (this.root === null) {
-    this.root = newNode;
-    return newNode;
+    this.root = empleado;
+    return empleado;
   } else {
     var current = this.root;
 
     while (true) {
-      if (empleado.años < current.empleado.años) {
+      if (empleado.años < current.años) {
         if (current.left === null) {
-          current.left = newNode;
-          return newNode;
+          current.left = empleado;
+          return current.left;
         } else {
           current = current.left;
         }
-      } else if (empleado.años > current.empleado.años) {
+      } else if (empleado.años > current.años) {
         if (current.right === null) {
-          current.right = newNode;
-          return newNode;
+          current.right = empleado;
+          return current.right;
         } else {
           current = current.right;
         }
       } else {
-        return "No se puede agregar el mismo empleado";
+        throw new Error("No se puede agregar el mismo empleado");
       }
     }
   }
 };
-
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {
   BinarySearchTree,
